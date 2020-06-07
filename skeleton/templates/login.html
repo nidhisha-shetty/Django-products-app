@@ -12,8 +12,12 @@
 	PASSWORD: <input type="password" name="p"><br>
 	
 	<input type="submit" name="login" value="Login">
-</form>
 
+	{%	for message in messages %}
+		{{message}} 
+	{% endfor %}
+
+</form>
 
 </body>
 </html>

@@ -5,4 +5,11 @@
 <a href="http://127.0.0.1:8000/read">Read</a><br>
 <a href="http://127.0.0.1:8000/update">Update</a><br>
 <a href="http://127.0.0.1:8000/delete">Delete</a><br>
+<!-- below code is for users who successfully logged in, the code(message) is present in login_view in views.py-->
+{%	for message in messages %}
+	{{message}} 
+{% endfor %}
+
+
 {% endblock %}
+
