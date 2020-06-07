@@ -1,0 +1,11 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+
+{% for x in obj %}
+
+*  <a href="{{ x.get_absolute_url_delete }}">{{ x.product_name }}<br> </a>
+
+{% endfor %}
+
+{% endblock %}

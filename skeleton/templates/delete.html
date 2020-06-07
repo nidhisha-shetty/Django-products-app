@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+
+
+{% block content %}
+Delete page<br>
+
+
+<form method="POST">{% csrf_token %}
+	
+	Do you want to delete {{obj.product_name}}?
+
+	<input type="submit" value="Delete">
+
+</form>
+{% endblock %}

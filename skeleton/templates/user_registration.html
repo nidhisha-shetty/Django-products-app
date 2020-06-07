@@ -1,0 +1,9 @@
+<form action="registration" method="POST">{% csrf_token %}
+	FIRST_NAME: <input type="text" name="f_n"><br>
+	LAST_NAME: <input type="text" name="l_n"><br>
+	USERNAME: <input type="text" name="u_n"><br>
+	PASSWORD1: <input type="password" name="p_1"><br>
+	PASSWORD2: <input type="password" name="p_2"><br>
+	EMAIL: <input type="email" name="e_a"><br>
+	<input type="submit" name="Register me">
+</form>

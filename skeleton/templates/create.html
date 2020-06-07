@@ -1,0 +1,14 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+Create page
+
+<form method="POST">{% csrf_token %}
+	
+	{{ form.as_p }}
+
+	<input class="button" type="submit" value="Save" />
+	<a href="/" class="button">Back</a>
+
+</form>
+{% endblock %}
