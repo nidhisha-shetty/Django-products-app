@@ -6,4 +6,7 @@
 	PASSWORD2: <input type="password" name="p_2"><br>
 	EMAIL: <input type="email" name="e_a"><br>
 	<input type="submit" name="Register me">
+	{% for message in messages %}
+		{{ message }}
+	{% endfor %}
 </form>

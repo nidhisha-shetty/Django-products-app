@@ -98,14 +98,14 @@ def register_view(request):
 
 		if password1==password2:
 			if User.objects.filter(username=user_name).exists():
-				messages.info(request,"username already exists")
+				messages.info(request,"username already exists, please try again")
 				print("username already exists")
-				return render(request,"login.html")
+				return render(request,"user_registration.html")
 
 			elif User.objects.filter(email=email_address).exists():
 				messages.info(request, "Email already exists")
 				print("Email already exists")
-				return render(request,"login.html")
+				return render(request,"user_registration.html")
 
 			else:
 				user=User.objects.create_user(first_name=firstname, last_name=lastname, username=user_name, password=password1, email=email_address)
@@ -130,7 +130,7 @@ def login_view(request):
 		if user is not None:
 			auth.login(request, user)
 			print("User logged in") #will print on cmd
-			return redirect("http://127.0.0.1:8000/")
+			return redirect("/home")
 			messages.info(request, "User logged in successfully!")
 		else:
 			messages.info(request, "Invalid credentials")
@@ -139,3 +139,10 @@ def login_view(request):
 
 	else:
 		return render(request, "login.html")
+
+def root_view(request):
+	return render(request,"root.html")
+
+def logout_view(request):
+	auth.logout(request)
+	return redirect("/")

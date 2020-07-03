@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from skeleton.views import home_view, create_view, read_view, list_update_view, list_delete_view, update_view, delete_view, register_view, login_view
+from skeleton.views import home_view, create_view, read_view, list_update_view, list_delete_view, update_view, delete_view, register_view, login_view, root_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view),
+    path('', root_view),
+    path('home', home_view),
     path('create', create_view),
     path('read', read_view),
     path('update', list_update_view),
@@ -28,4 +29,5 @@ urlpatterns = [
     path('delete/<int:ids>/', delete_view),
     path('registration', register_view),
     path('login', login_view),
+    path('logout', logout_view)
 ]
